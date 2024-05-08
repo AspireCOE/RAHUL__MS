@@ -22,8 +22,9 @@ const SignUP = () => {
         {
           checkAndAddTheUser();
         }
-        else{
-          
+        else
+        {
+        
         }
       }
 
@@ -31,7 +32,7 @@ const SignUP = () => {
         try {
           const userCredential = await createUserWithEmailAndPassword(auth, emailId.userEmail, password.userPassword);
           const user = userCredential.user;
-          alert(user + "User successfully created")
+          alert(emailId.userEmail + "User successfully created")
           navigate("/dashboard")
 
         } catch (error) {
@@ -52,16 +53,33 @@ const SignUP = () => {
         {
           return false;
         }
+
+        const firstNum=userName.userName.charAt(0);
+        if(!isNaN(firstNum))
+        {
+            alert("The username should be starts with Letter");
+            return false;
+        }
+        
+        const passWord=/[!@#$%^&*(),.?":{}|<>]/.test(password.userPassword);
+        if(!passWord)
+          {
+            alert("The password must consists of atleast one special character");
+            return false;
+          }
+
         if((password.userPassword.length < 6 ))
         {
           alert("The password length must be at least 6");
           return false;
         }
+
         if (password.userPassword != confirmPassword.userConfirmPassword)
         {
           alert("Please provide same password in both password entries")
           return false;
         }
+
         if(!(isValidEmail(emailId.userEmail)))
         {
           alert("Please provide a valid email id")
