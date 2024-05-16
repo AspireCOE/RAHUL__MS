@@ -1,0 +1,44 @@
+<h1 style="text-align:center">ACCOUNT COMPONENT</h1>
+<label for="Account Category">Choose Category: </label>
+<select [(ngModel)]="typeInput">
+    <option>Current</option>
+    <option>Savings</option>
+    <option>Joint</option>
+    <option>Business</option>
+    <option>Student</option>
+</select>
+
+<br><br>
+<table>
+    <thead>
+        <tr>
+            <th>Ac Holder Name</th>
+            <th>Account Number</th>
+            <th>Account Type</th>
+            <th>Balance</th>
+            <th>Date of Joining</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(account of accounts;track account){
+        <tr>
+            @if(account.accountType==typeInput){
+               <td>{{account.acHolderName}}</td>
+               <td>{{account.accountNumber}}</td>
+               <td>{{account.accountType}}</td>
+               <td>{{account.balance}}</td>
+               <td>{{account.dateOfJoining}}</td>
+               <td>@switch(getStatus(account.balance)){
+                @case('loyal'){Loyal}
+                @case('inactive'){Inactive}
+                @case('active'){Active}
+                @default{'Unknown'}
+            }
+               </td>
+            }
+        </tr>
+    }
+    </tbody>
+
+</table>

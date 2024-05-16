@@ -1,2 +1,13 @@
-<h1>WELCOME TO ANGULAR</h1>
-<app-shop></app-shop>
+<div class="page">
+<h1 style="text-align: center;">ROUTING</h1>
+<div class="links">
+<a [routerLink]="'shop'">SHOP</a>&nbsp;
+<a [routerLink]="'product'">VIEW PRODUCTS</a>&nbsp;
+<a [routerLink]="'student'">STUDENT DETAILS</a>&nbsp;
+<a [routerLink]="'account'">ACCOUNT DETAILS</a>
+</div>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+</div>
