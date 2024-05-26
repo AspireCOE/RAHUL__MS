@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { accountHolder } from './account.model';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { CountPipe } from '../count.pipe';
 
 
 @Component({
   selector: 'app-account',
   standalone: true,                                           
-  imports: [FormsModule],
-  templateUrl: './account.component.html',
+  imports: [FormsModule,CommonModule,CountPipe],
+  templateUrl:'./account.component.html',
   styleUrl: './account.component.css'
 })
 export class AccountComponent {

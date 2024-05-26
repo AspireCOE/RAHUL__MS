@@ -8,6 +8,7 @@
     <option>Student</option>
 </select>
 
+
 <br><br>
 <table>
     <thead>
@@ -27,7 +28,7 @@
                <td>{{account.acHolderName}}</td>
                <td>{{account.accountNumber}}</td>
                <td>{{account.accountType}}</td>
-               <td>{{account.balance}}</td>
+               <td>{{account.balance|currency:'INR'}}</td>
                <td>{{account.dateOfJoining}}</td>
                <td>@switch(getStatus(account.balance)){
                 @case('loyal'){Loyal}

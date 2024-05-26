@@ -4,8 +4,9 @@ table {
   }
   
 th,td {
-    border: 1px solid #040404;
+    border: 1px solid #090909;
     padding: 8px;
+    color:rgb(7, 7, 7);
   }
   
  th {
@@ -13,8 +14,9 @@ th,td {
   }
   select
   {
-      border-color: #760d0d;
-      background-color: rgb(227, 222, 215);
+      border-color: #090909;
+      background-color: rgb(239, 235, 235);
       padding: 8px;
       font-weight: bold ;
   }
+  
