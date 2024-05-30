@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -7,8 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
 
-  constructor(private client:HttpClient) {}
-    getAllProducts(){
+  constructor(private client:HttpClient) { }
+
+  getAllProducts(){
     return this.client.get("http://localhost:3000/products")
-}
+  }
 }
